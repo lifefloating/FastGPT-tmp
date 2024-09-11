@@ -57,8 +57,8 @@ const Navbar = ({ unread }: { unread: number }) => {
       {
         // 这里图标什么暂时没加
         label: t('common:navbar.OpenFile'),
-        icon: 'support/file/userLight',
-        activeIcon: 'support/file/userFill',
+        icon: 'support/user/userLight',
+        activeIcon: 'support/user/userFill',
         link: '/file',
         activeLink: ['/file']
       }
