@@ -1081,7 +1081,8 @@
     "Chat": "Chat",
     "Datasets": "Datasets",
     "Studio": "Studio",
-    "Tools": "Tools"
+    "Tools": "Tools",
+    "OpenFile": "OpenFile"
   },
   "new_create": "Create New",
   "no": "No",
