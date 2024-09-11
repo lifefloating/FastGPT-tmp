@@ -53,6 +53,14 @@ const Navbar = ({ unread }: { unread: number }) => {
         activeIcon: 'support/user/userFill',
         link: '/account',
         activeLink: ['/account']
+      },
+      {
+        // 这里图标什么暂时没加
+        label: t('common:navbar.OpenFile'),
+        icon: 'support/file/userLight',
+        activeIcon: 'support/file/userFill',
+        link: '/file',
+        activeLink: ['/file']
       }
     ],
     [lastChatAppId, lastChatId, t]

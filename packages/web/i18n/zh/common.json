@@ -1081,7 +1081,8 @@
     "Chat": "聊天",
     "Datasets": "知识库",
     "Studio": "工作台",
-    "Tools": "工具"
+    "Tools": "工具",
+    "OpenFile": "打开文件"
   },
   "new_create": "新建",
   "no": "否",
