@@ -53,6 +53,7 @@
     "react-hook-form": "7.43.1",
     "react-i18next": "14.1.2",
     "react-markdown": "^9.0.1",
+    "react-pdf": "^9.1.0",
     "react-syntax-highlighter": "^15.5.0",
     "reactflow": "^11.7.4",
     "rehype-external-links": "^3.0.0",
