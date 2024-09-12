@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import { Box, Button } from '@chakra-ui/react';
 import { useSelectFile } from '@/web/common/file/hooks/useSelectFile';
-import FileSelector from '@/pages/dataset/detail/components/Import/components/FileSelector';
-import RenderUploadFiles from '@/pages/dataset/detail/components/Import/components/RenderFiles';
 import Preview from './components/Preview';
 import { ImportSourceItemType } from '@/web/core/dataset/type';
 
 const FilePage = () => {
   const [selectFiles, setSelectFiles] = useState<ImportSourceItemType[]>([]);
-  const [showPreview, setShowPreview] = useState(false);
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
 
   const { File, onOpen } = useSelectFile({
     fileType: '.pdf',
@@ -26,37 +24,20 @@ const FilePage = () => {
       isUploading: false
     }));
     setSelectFiles(newFiles);
+    setSelectedFile(files[0]);
   };
 
   return (
     <Box p={4}>
-      <FileSelector
-        fileType=".pdf"
-        selectFiles={selectFiles}
-        setSelectFiles={setSelectFiles}
-        onStartSelect={() => {}}
-        onFinishSelect={() => setShowPreview(true)}
-      />
-      
       <File onSelect={handleFileSelect} />
       
       <Button onClick={onOpen} mt={4}>
         选择 PDF 文件
       </Button>
 
-      {selectFiles.length > 0 && (
+      {selectedFile && (
         <Box mt={4}>
-          <RenderUploadFiles
-            files={selectFiles}
-            setFiles={setSelectFiles}
-            showPreviewContent={true}
-          />
-        </Box>
-      )}
-
-      {showPreview && (
-        <Box mt={4}>
-          <Preview showPreviewChunks={false} />
+          <Preview file={selectedFile} />
         </Box>
       )}
     </Box>

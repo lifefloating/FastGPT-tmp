@@ -19,7 +19,7 @@ export const I18nContext = createContext<I18nContextType>({
 });
 
 const I18nContextProvider = ({ children }: { children: React.ReactNode }) => {
-  const { t: commonT } = useTranslation('common');
+  const { t: commonT, i18n } = useTranslation('common');
   const { t: appT } = useTranslation('app');
   const { t: datasetT } = useTranslation('dataset');
   const { t: fileT } = useTranslation('file');
@@ -38,7 +38,8 @@ const I18nContextProvider = ({ children }: { children: React.ReactNode }) => {
         publishT,
         workflowT,
         userT,
-        chatT
+        chatT,
+        i18n
       }}
     >
       {children}
