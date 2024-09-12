@@ -14,7 +14,7 @@ const FilePage = () => {
   });
 
   const handleFileSelect = (files: File[]) => {
-    const newFiles = files.map(file => ({
+    const newFiles = files.map((file) => ({
       id: file.name,
       file,
       sourceName: file.name,
@@ -30,7 +30,7 @@ const FilePage = () => {
   return (
     <Box p={4}>
       <File onSelect={handleFileSelect} />
-      
+
       <Button onClick={onOpen} mt={4}>
         选择 PDF 文件
       </Button>

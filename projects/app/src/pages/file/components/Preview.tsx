@@ -17,6 +17,7 @@ const Preview: React.FC<PreviewProps> = ({ file }) => {
   useEffect(() => {
     if (file) {
       const url = URL.createObjectURL(file);
+      console.log('PDF URL:', url);
       setPdfUrl(url);
       return () => URL.revokeObjectURL(url);
     }
